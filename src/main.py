@@ -3,6 +3,8 @@ import streamlit as st
 import pandas as pd
 from constants import states, price_correlation
 
+pd.options.plotting.backend = "plotly"
+
 unwanted = '(*)'
 FILE_PATH = './raw/TA_PRECO_MEDICAMENTO.csv'
 
@@ -148,6 +150,7 @@ with st.sidebar:
     )
 
     medicine = st.selectbox("Selecione o medicamento",  get_data_frame()["substância"].dropna().unique())
+    st.info("Para os dados estatisticos")
     state = st.selectbox("Selecione o estado", states)
     price_type = st.selectbox("Selecione o tipo de preço", ("Fábrica", "Consumidor Final"))
     value = st.slider("Selecione os valores", min_value=0, max_value=1000, value=100)
@@ -163,7 +166,8 @@ if st.checkbox("Mostrar tabela"):
 
 st.markdown("---")
 st.subheader("Descrição estatística dos valores")
-st.dataframe(get_descriptions(state=state, type=type, value=value))
+descriptions = get_descriptions(state=state, type=type, value=value)
+st.dataframe(descriptions)
 
 # Remove hamburguer button and footer from app
 hide_streamlit_style = """
@@ -173,3 +177,5 @@ hide_streamlit_style = """
             </style>
             """
 # st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+chart = descriptions.plot.bar()
+st.plotly_chart(chart, )
