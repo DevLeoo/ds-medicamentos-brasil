@@ -17,6 +17,11 @@ abaixo.
 * Streamlit
 * Pandas
 * Plotly
+
+## Como rodar
+ 1. Clone o repositório
+ 2. No diretório raiz do projeto, rode o comando: ``` streamlit run src/main.py ```
+
 ---
 
 Com o pouco de experiência e conhecimento que possuo até o momento, desenvolvi esta simples página 
@@ -24,5 +29,6 @@ para relembrar alguns conceitos e técnicas. Também foi aqui que tive primeiro 
 **straeamlit**
 
 Dúvidas, críticas e sugestões estou disponivel através do meu linkedin [https://www.linkedin.com/in/leonardo-teixeira-c%C3%A2ndido-286065191/]()
+
 
 **Até mais 👋**
