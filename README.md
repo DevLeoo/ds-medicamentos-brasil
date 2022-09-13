@@ -16,6 +16,7 @@ abaixo.
 * Python
 * Streamlit
 * Pandas
+* Plotly
 ---
 
 Com o pouco de experiência e conhecimento que possuo até o momento, desenvolvi esta simples página 
